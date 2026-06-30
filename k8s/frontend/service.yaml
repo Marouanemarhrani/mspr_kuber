@@ -1,0 +1,16 @@
+# Frontend (nginx): ALB or Ingress points here. ClusterIP for use with Ingress; use LoadBalancer for direct ALB.
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: frontend
+  labels:
+    app: frontend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      name: http
+  selector:
+    app: frontend

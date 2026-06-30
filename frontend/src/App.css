@@ -1,0 +1,148 @@
+.header {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+}
+
+.logo-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.logo-link:hover {
+  opacity: 0.9;
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.nav-user {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  align-self: center;
+}
+
+/* Logout: same look as nav links (padding, radius, hover) */
+.nav-link-btn {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: calc(100vh - 56px);
+  background: #f0fdfa;
+  flex: 1;
+}
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 2FA notice banner (shown after login when user has no 2FA) */
+.notice-2fa {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  color: #fff;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+}
+
+.notice-2fa-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  flex: 1 1 280px;
+}
+
+.notice-2fa-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.notice-2fa-btn {
+  margin: 0;
+}
+
+.notice-2fa .btn-primary {
+  background: #fff;
+  color: #0f766e;
+}
+
+.notice-2fa .btn-primary:hover {
+  background: #f0fdfa;
+  color: #115e59;
+}
+
+.notice-2fa .btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.notice-2fa .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}

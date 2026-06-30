@@ -1,0 +1,47 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  generate-password:
+    lang: node18
+    handler: ./generate-password
+    image: marouanemarhrani/mspr:generate-password
+    image_pull_policy: Always
+    environment:
+      POSTGRES_HOST: postgres.database.svc.cluster.local
+      POSTGRES_USER: mspr
+      POSTGRES_PASSWORD: mspr
+      POSTGRES_DB: msprdb
+      ENCRYPTION_KEY: change-me-32-bytes-key-for-aes!!
+
+  twofa:
+    lang: node18
+    handler: ./twofa
+    image: marouanemarhrani/mspr:twofa
+    image_pull_policy: Always
+    environment:
+      POSTGRES_HOST: postgres.database.svc.cluster.local
+      POSTGRES_USER: mspr
+      POSTGRES_PASSWORD: mspr
+      POSTGRES_DB: msprdb
+      ENCRYPTION_KEY: change-me-32-bytes-key-for-aes!!
+
+  authenticate:
+    lang: node18
+    handler: ./authenticate
+    image: marouanemarhrani/mspr:authenticate
+    image_pull_policy: Always
+    environment:
+      POSTGRES_HOST: postgres.database.svc.cluster.local
+      POSTGRES_USER: mspr
+      POSTGRES_PASSWORD: mspr
+      POSTGRES_DB: msprdb
+      ENCRYPTION_KEY: change-me-32-bytes-key-for-aes!!
+
+  logout:
+    lang: node18
+    handler: ./logout
+    image: marouanemarhrani/mspr:logout
+    image_pull_policy: Always

@@ -1,0 +1,10 @@
+{
+  "name": "mspr-openfaas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "test:frontend": "npm --prefix frontend run lint && npm --prefix frontend run build",
+    "test:smoke": "./run-tests.sh"
+  }
+}

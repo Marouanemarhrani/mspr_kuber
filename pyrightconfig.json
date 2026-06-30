@@ -1,0 +1,6 @@
+{
+  "include": ["shared", "generate-password", "2fa", "authenticate", "frontend"],
+  "extraPaths": ["shared"],
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none"
+}

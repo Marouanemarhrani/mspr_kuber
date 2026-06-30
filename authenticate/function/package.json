@@ -1,0 +1,1 @@
+{"name":"authenticate-handler","version":"1.0.0","scripts":{"test":"echo ok && exit 0"},"dependencies":{"pg":"^8.11.3","speakeasy":"^2.0.0"}}
