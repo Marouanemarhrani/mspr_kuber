@@ -27,14 +27,16 @@ jobs:
         run: npm ci
         working-directory: frontend
 
-      - name: Setup kubectl
-        uses: azure/setup-kubectl@v4
-
       - name: Run function unit tests
         run: npm test
 
       - name: Lint and build frontend
         run: npm run test:frontend
 
+      - name: Install kubeconform
+        run: |
+          curl -sL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz \
+            | tar -xz -C /usr/local/bin kubeconform
+
       - name: Validate Kubernetes manifests
-        run: kubectl apply --dry-run=client -f k8s/database -f k8s/frontend
+        run: kubeconform -summary -strict k8s/database k8s/frontend
